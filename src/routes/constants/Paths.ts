@@ -19,6 +19,10 @@ const Paths = {
     Update: '/update',
     Delete: '/delete/:id',
   },
+  Test:{
+    Base: '/test',
+    Get: '/all',
+  },
 };
 
 

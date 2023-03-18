@@ -12,7 +12,6 @@ interface ILoginReq {
   password: string;
 }
 
-
 // **** Functions **** //
 
 /**

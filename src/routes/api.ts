@@ -6,12 +6,12 @@ import Paths from './constants/Paths';
 import User from '@src/models/User';
 import AuthRoutes from './AuthRoutes';
 import UserRoutes from './UserRoutes';
-
+import TestRoutes from './TestRoutes';
 
 // **** Variables **** //
 
-const apiRouter = Router(),
-  validate = jetValidator();
+const apiRouter = Router();
+const validate = jetValidator();
 
 
 // **** Setup **** //
@@ -34,6 +34,14 @@ authRouter.get(
 // Add AuthRouter
 apiRouter.use(Paths.Auth.Base, authRouter);
 
+const testRouter = Router();
+
+testRouter.get(
+  Paths.Test.Get,
+  TestRoutes.getAll,
+);
+
+apiRouter.use(Paths.Test.Base, testRouter);
 
 // ** Add UserRouter ** //
 
