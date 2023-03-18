@@ -22,6 +22,7 @@ const Paths = {
   Test:{
     Base: '/test',
     Get: '/all',
+    GetId: '/:id',
   },
 };
 

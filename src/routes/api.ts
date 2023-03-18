@@ -41,6 +41,11 @@ testRouter.get(
   TestRoutes.getAll,
 );
 
+testRouter.get(
+  Paths.Test.GetId,
+  TestRoutes.getId,
+);
+
 apiRouter.use(Paths.Test.Base, testRouter);
 
 // ** Add UserRouter ** //

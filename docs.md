@@ -3,6 +3,7 @@
 - [env] : env
 - [spec] : test
 - [build] : build code
+- [vendor] : 3rd party
 - [src] : code
     - [constants] : const, key, env
     - [models] : models data

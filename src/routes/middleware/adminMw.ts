@@ -7,7 +7,7 @@ import { JwtPayload } from 'jsonwebtoken';
 
 import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
-import SessionUtil from '@src/util/SessionUtil';
+import SessionUtil from '@src/utils/SessionUtil';
 import { ISessionUser, UserRoles } from '@src/models/User';
 
 
