@@ -3,7 +3,7 @@ import UserRepo from '@src/repos/UserRepo';
 import PwdUtil from '@src/utils/PwdUtil';
 import { tick } from '@src/utils/misc';
 
-import HttpStatusCodes from '@src/constants/HttpStatusCodes';
+import { HttpStatusCodes } from '@src/constants/HttpStatusCodes';
 import { RouteError } from '@src/other/classes';
 import { IUser } from '@src/models/User';
 

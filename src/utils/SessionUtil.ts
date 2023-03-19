@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 
-import HttpStatusCodes from '@src/constants/HttpStatusCodes';
+import { HttpStatusCodes } from '@src/constants/HttpStatusCodes';
 import { RouteError } from '@src/other/classes';
 import jsonwebtoken from 'jsonwebtoken';
 
-import EnvVars from '../constants/EnvVars';
+import { EnvVars } from '@src/constants/EnvVars';
 
 
 // **** Variables **** //

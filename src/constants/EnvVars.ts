@@ -5,9 +5,10 @@
 /* eslint-disable node/no-process-env */
 
 
-export default {
+export const EnvVars = {
   NodeEnv: (process.env.NODE_ENV ?? ''),
   Port: (process.env.PORT ?? 0),
+  ApiBasePath: (process.env.API_BASE_PATH ?? ''),
   CookieProps: {
     Key: 'ExpressGeneratorTs',
     Secret: (process.env.COOKIE_SECRET ?? ''),

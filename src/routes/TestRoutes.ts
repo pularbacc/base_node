@@ -1,24 +1,30 @@
-import HttpStatusCodes from '@src/constants/HttpStatusCodes';
+import { HttpStatusCodes } from '@src/constants/HttpStatusCodes';
 import { IReq, IRes } from './types/express/misc';
 
-// **** Functions **** //
+import { Router } from 'express';
+import adminMw from './middleware/adminMw';
 
-/**
- * Get all tests
- */
-function getAll(_: IReq, res: IRes) {
-  return res.status(HttpStatusCodes.OK).json({ messages: 'ok ok' });
+export class TestRoutes {
+  private _routes: Router;
+
+  public constructor() {
+    this._routes = Router();
+
+    this._routes.get('/all', this.getAll);
+    this._routes.post('/:id', this.postId);
+  }
+
+  public get routes() {
+    return this._routes;
+  }
+
+  public getAll = (_: IReq, res: IRes) => {
+    throw "hehe";
+    return res.status(HttpStatusCodes.OK).json({ messages: 'ok ok' });
+  };
+
+  private postId = (req: IReq, res: IRes) => {
+    const id = +req.params.id;
+    return res.status(HttpStatusCodes.OK).json({ messages: id });
+  };
 }
-
-function getId(req: IReq, res: IRes) {
-  // convert id to int
-  const id = +req.params.id;
-  return res.status(HttpStatusCodes.OK).json({ messages: id});
-}
-
-// **** Export default **** //
-
-export default {
-  getAll,
-  getId,
-} as const;
