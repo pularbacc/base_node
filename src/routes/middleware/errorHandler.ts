@@ -1,9 +1,10 @@
+
 import { RouteError } from '@src/other/classes';
-import logger from 'jet-logger';
 import { HttpStatusCodes } from '@src/constants/HttpStatusCodes';
 import { Request, Response, NextFunction } from 'express';
 import { EnvVars } from '@src/constants/EnvVars';
 import { NodeEnvs } from '@src/constants/misc';
+import { log } from '@src/utils/log';
 
 export const errorHandler = (
   err: Error,
@@ -12,9 +13,9 @@ export const errorHandler = (
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   next: NextFunction,
 ) => {
-  logger.err('--------------> on err');
+  log.err('--------------> on err');
   if (EnvVars.NodeEnv !== NodeEnvs.Test) {
-    logger.err(err, true);
+    log.err(err, true);
   }
   let status = HttpStatusCodes.BAD_REQUEST;
   if (err instanceof RouteError) {

@@ -6,7 +6,7 @@ import { apiRouter }  from '@src/routes/index';
 import { EnvVars } from '@src/constants/EnvVars';
 import { NodeEnvs } from '@src/constants/misc';
 import { errorHandler } from './routes/middleware/errorHandler';
-
+import { log } from "@src/utils/log";
 
 // **** Variables **** //
 
